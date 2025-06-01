@@ -34,7 +34,7 @@ jobs:
       run: echo "COMMIT_HASH=${{ env.SHORT_SHA }}" >> $GITHUB_ENV
 
     - name: Log in to Docker Hub
-      run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+      run: echo ${{ vars.DOCKER_PASSWORD }} | docker login -u ${{ vars.DOCKER_USERNAME }} --password-stdin
 
     - name: Build and push Docker image
       run: |
