@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mostaqbal Watan Meet</string>
-    <string name="restriction_server_url_description">URL of Mostaqbal Watan Meet server instance to connect to</string>
+    <string name="app_name">Alazhar Meet</string>
+    <string name="restriction_server_url_description">URL of Alazhar Meet server instance to connect to</string>
     <string name="restriction_server_url_title">Server URL</string>
 </resources>

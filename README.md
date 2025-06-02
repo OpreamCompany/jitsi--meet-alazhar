@@ -1,6 +1,6 @@
-# <p align="center">Mostaqbal Watan Meet</p>
+# <p align="center">Alazhar Meet</p>
 
-Mostaqbal Watan Meet is a set of Open Source projects which empower users to use and deploy
+Alazhar Meet is a set of Open Source projects which empower users to use and deploy
 video conferencing platforms with state-of-the-art video quality and features.
 
 <hr />
@@ -11,7 +11,7 @@ video conferencing platforms with state-of-the-art video quality and features.
 
 <hr />
 
-Amongst others here are the main features Mostaqbal Watan Meet offers:
+Amongst others here are the main features Alazhar Meet offers:
 
 -   Support for all current browsers
 -   Mobile applications
@@ -25,9 +25,9 @@ Amongst others here are the main features Mostaqbal Watan Meet offers:
 
 And many more!
 
-## Using Mostaqbal Watan Meet
+## Using Alazhar Meet
 
-Using Mostaqbal Watan Meet is straightforward, as it's browser based. Head over to [meet.jit.si](https://meet.jit.si) and give it a try. It's scalable and free to use. All you need is a Google, Facebook or GitHub account in order to start a meeting. All browsers are supported!
+Using Alazhar Meet is straightforward, as it's browser based. Head over to [meet.jit.si](https://meet.jit.si) and give it a try. It's scalable and free to use. All you need is a Google, Facebook or GitHub account in order to start a meeting. All browsers are supported!
 
 Using mobile? No problem, you can either use your mobile web browser or our fully-featured
 mobile apps:
@@ -44,37 +44,37 @@ developed you can also sign up for our open beta testing here:
 
 ## Running your own instance
 
-If you'd like to run your own Mostaqbal Watan Meet installation head over to the [handbook](https://jitsi.github.io/handbook/docs/devops-guide/) to get started.
+If you'd like to run your own Alazhar Meet installation head over to the [handbook](https://jitsi.github.io/handbook/docs/devops-guide/) to get started.
 
 We provide Debian packages and a comprehensive Docker setup to make deployments as simple as possible.
 Advanced users also have the possibility of building all the components from source.
 
 You can check the latest releases [here](https://jitsi.github.io/handbook/docs/releases).
 
-## Mostaqbal Watan as a Service
+## Alazhar as a Service
 
 If you like the branding capabilities of running your own instance but you'd like
 to avoid dealing with the complexity of monitoring, scaling and updates, JaaS might be
 for you.
 
-[8x8 Mostaqbal Watan as a Service (JaaS)](https://jaas.8x8.vc) is an enterprise-ready video meeting platform that allows developers, organizations and businesses to easily build and deploy video solutions. With Mostaqbal Watan as a Service we now give you all the power of Mostaqbal Watan running on our global platform so you can focus on building secure and branded video experiences.
+[8x8 Alazhar as a Service (JaaS)](https://jaas.8x8.vc) is an enterprise-ready video meeting platform that allows developers, organizations and businesses to easily build and deploy video solutions. With Alazhars as a Service we now give you all the power of Alazhar running on our global platform so you can focus on building secure and branded video experiences.
 
 ## Documentation
 
-All the Mostaqbal Watan Meet documentation is available in [the handbook](https://jitsi.github.io/handbook/).
+All the Alazhar Meet documentation is available in [the handbook](https://jitsi.github.io/handbook/).
 
 ## Security
 
-For a comprehensive description of all Mostaqbal Watan Meet's security aspects, please check [this link](https://jitsi.org/security).
+For a comprehensive description of all Alazhar Meet's security aspects, please check [this link](https://jitsi.org/security).
 
-For a detailed description of Mostaqbal Watan Meet's End-to-End Encryption (E2EE) implementation,
+For a detailed description of Alazhar Meet's End-to-End Encryption (E2EE) implementation,
 please check [this link](https://jitsi.org/e2ee-whitepaper/).
 
-For information on reporting security vulnerabilities in Mostaqbal Watan Meet, see [SECURITY.md](./SECURITY.md).
+For information on reporting security vulnerabilities in Alazhar Meet, see [SECURITY.md](./SECURITY.md).
 
 ## Contributing
 
-If you are looking to contribute to Mostaqbal Watan Meet, first of all, thank you! Please
+If you are looking to contribute to Alazhar Meet, first of all, thank you! Please
 see our [guidelines for contributing](CONTRIBUTING.md).
 
 <br />
@@ -82,6 +82,6 @@ see our [guidelines for contributing](CONTRIBUTING.md).
 
 <footer>
 <p align="center" style="font-size: smaller;">
-Built with ❤️ by the Mostaqbal Watan team at <a href="https://8x8.com" target="_blank">8x8</a> and our community.
+Built with ❤️ by the Alazhar team at <a href="https://8x8.com" target="_blank">8x8</a> and our community.
 </p>
 </footer>
