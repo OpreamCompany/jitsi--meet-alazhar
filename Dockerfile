@@ -1,29 +1,85 @@
-# Base image for building the app
-FROM node:20-alpine AS builder
-
-# Set working directory
+ 
+# Use Node to build the app
+FROM node:18 AS builder
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package.json package-lock.json ./
-
-# Install dependencies
-RUN npm install --legacy-peer-deps
-
-# Copy the rest of the application code
+# Copy files and install
 COPY . .
+RUN npm install
 
-# Build the app
-RUN npm run build
-RUN ls -la
-# Use nginx to serve the static files
+# Build for production (no dev server or file watching)
+RUN make
+
+# Use nginx to serve the built app
 FROM nginx:alpine
-
-# Copy the build output from the builder stage to nginx's default serving directory
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Expose port 80 for nginx
+COPY --from=builder /app/build /usr/share/nginx/html
 EXPOSE 80
-
-# Start nginx
 CMD ["nginx", "-g", "daemon off;"] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # Use official Node.js image with Alpine for smaller size                                                                
+# FROM node:18-alpine AS builder                                                                                           
+                                                                                                                         
+# # Set working directory
+# WORKDIR /app
+
+# # Install system dependencies for native modules
+# RUN apk add --no-cache \
+#     python3 \
+#     make \
+#     g++ \
+#     git \
+#     bash
+
+# # Copy package files first to leverage Docker cache
+# COPY package.json package-lock.json .npmrc ./
+
+# # Install dependencies
+# RUN npm ci --legacy-peer-deps
+
+# # Copy all files
+# COPY . .
+
+# # Build the application
+# RUN echo fs.inotify.max_user_watches=524288 >> /etc/sysctl.conf && \
+#     sysctl -p
+# RUN make dev
+
+# # Create production image
+# FROM node:18-alpine
+
+# # Install system dependencies for runtime
+# RUN apk add --no-cache \
+#     bash \
+#     curl
+
+# # Set working directory
+# WORKDIR /app
+
+# # Copy built application from builder stage
+# COPY --from=builder /app /app
+
+# # Expose ports (Jitsi typically uses 80/443, 10000/udp for media)
+# EXPOSE 80 443 10000/udp
+
+# # Health check
+# HEALTHCHECK --interval=30s --timeout=30s --start-period=10s \
+#     CMD curl -f http://localhost:80 || exit 1
+
+# # Start the application
+# CMD ["make", "dev"] 
