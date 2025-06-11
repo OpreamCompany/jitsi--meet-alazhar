@@ -15,7 +15,31 @@ RUN ls -la /app/build
 
 # # Use nginx to serve the built app
 FROM nginx:alpine
+
+# Delete default Nginx files
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy files from the builder stage to /usr/share/nginx/html
+COPY --from=builder /app/css /usr/share/nginx/html/css
+COPY --from=builder /app/images /usr/share/nginx/html/images
+COPY --from=builder /app/libs /usr/share/nginx/html/libs
+COPY --from=builder /app/static /usr/share/nginx/html/static
+COPY --from=builder /app/config.js /usr/share/nginx/html/
+COPY --from=builder /app/interface_config.js /usr/share/nginx/html/
+COPY --from=builder /app/utils.js /usr/share/nginx/html/
+COPY --from=builder /app/do_external_connect.js /usr/share/nginx/html/
+COPY --from=builder /app/manifest.json /usr/share/nginx/html/
+COPY --from=builder /app/pwa-worker.js /usr/share/nginx/html/
+COPY --from=builder /app/head.html /usr/share/nginx/html/
+COPY --from=builder /app/fonts.html /usr/share/nginx/html/
+COPY --from=builder /app/title.html /usr/share/nginx/html/
+COPY --from=builder /app/plugin.head.html /usr/share/nginx/html/
+COPY --from=builder /app/body.html /usr/share/nginx/html/
+COPY --from=builder /app/index.html /usr/share/nginx/html/
+
 COPY --from=builder /app/build /usr/share/nginx/html
+
+RUN echo 'ssi on;' >> /etc/nginx/nginx.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"] 
 
