@@ -9,12 +9,13 @@ RUN npm install
 
 # Build for production (no dev server or file watching)
 RUN make
-
-# Use nginx to serve the built app
-FROM nginx:alpine
-COPY --from=builder /app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"] 
+# Debugging: List the contents of /app/build
+RUN ls -la /app/build
+# # Use nginx to serve the built app
+# FROM nginx:alpine
+# COPY --from=builder /app/build /usr/share/nginx/html
+# EXPOSE 80
+# CMD ["nginx", "-g", "daemon off;"] 
 
 
 
